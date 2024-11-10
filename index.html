@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Perpetual Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <!-- Icône du menu pour mobile -->
+            <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
+            <nav class="Main-Navigation" aria-label="Main Navigation">
+                <ul id="menu">
+                    <li><a href="#about" aria-label="About section">About</a></li>
+                    <li><a href="#catalogue" aria-label="Product Catalogue section">Product Catalogue</a></li>
+                    <li><a href="#bespoke" aria-label="Bespoke Solution section">Bespoke Solution</a></li>
+                    <li><a href="#blog" aria-label="Blog section">Blog</a></li>
+                    <li><a href="#careers" aria-label="Careers section">Careers</a></li>
+                    <li><a href="#contact" aria-label="Contact Us section">Contact Us</a></li>
+                </ul>
+                <a class="btn register-btn" aria-label="Register an account">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main">
+        <div class="container">
+            <section class="mainContent">
+
+                <div id="hideProduct" class="hide-Product">
+                    <div class="hideProduct-content">
+                    <a href="#" id="hideProductBtn" class="btn-bespoke" aria-label="Discover the Bespoke">
+                        <img src="img/fleche-vers-la-droite.svg" alt="">Standard Product Catalog
+                    </a>
+                </div>
+                </div>
+
+                <div id="blocLeft" class="bloc bloc-left d-bloc align-center">
+
+                    <div id="contenu-bloc-left">
+                        <p><span>Discover&nbsp;</span>Our <br/>Standard Product Catalog</p>
+                        <div class="productList">
+                            <a href="#" class="btn discover-btn">Barrier Packs<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">Actuators<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">Cuns<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">Valves<img src="img/fleche-droite.svg" alt=""></a>
+                        </div>
+                        <a href="#" id="discoverBtn" class="btn discoverBtn" aria-label="Discover the catalog">Discover</a>
+                    </div>
+
+                    <div id="imgBlocLeft" class="image-left">
+                        <img src="img/image-bloc2.png" width="100" height="461" alt="Half left image">
+                    </div>
+
+                </div>
+            
+                <div id="blocRight" class="bloc bloc-right d-bloc align-center">
+                    <div  id="imgBlocRight" class="imgBloc image-right">
+                        <img src="img/image-bloc3.png" width="100" height="461" alt="Half right image">
+                    </div>
+                    <div id="contenu-bloc-right">
+                        <p><span>Ask&nbsp;</span>for a <br/> Bespoke Dispensing Solution</p>
+                        <div class="bespokeList">
+                            <a href="#" class="btn discover-btn">3D configurations<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">Product Development<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">Laboratory Services<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">Tooling & Equipment<img src="img/fleche-droite.svg" alt=""></a>
+                        </div>
+                        <button id="learnBtn" class="btn" aria-label="Learn more about bespoke solutions">Learn More</button>
+                    </div>
+                </div>
+
+                <div id="hideBespoke" class="hide-bespoke">
+                    <div class="hideBespoke-content">
+                    <a href="#" id="hideBespokeBtn" class="btn-bespoke" aria-label="Discover the Bespoke">
+                        <img src="img/fleche-vers-la-gauche.svg" alt="">Bespoke dispensing solution
+                    </a>
+                </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

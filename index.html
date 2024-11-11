@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -35,7 +36,7 @@
             <section class="mainContent">
 
                 <div id="hideProduct" class="hide-Product">
-                    <div class="hideProduct-content">
+                    <div id="hideProductContent" class="hideProduct-content">
                     <a href="#" id="hideProductBtn" class="btn-bespoke" aria-label="Discover the Bespoke">
                         <img src="img/fleche-vers-la-droite.svg" alt="">Standard Product Catalog
                     </a>
@@ -68,22 +69,28 @@
                     <div id="contenu-bloc-right">
                         <p><span>Ask&nbsp;</span>for a <br/> Bespoke Dispensing Solution</p>
                         <div class="bespokeList">
-                            <a href="#" class="btn discover-btn">3D configurations<img src="img/fleche-droite.svg" alt=""></a>
-                            <a href="#" class="btn discover-btn">Product Development<img src="img/fleche-droite.svg" alt=""></a>
-                            <a href="#" class="btn discover-btn">Laboratory Services<img src="img/fleche-droite.svg" alt=""></a>
-                            <a href="#" class="btn discover-btn">Tooling & Equipment<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">
+                                <img src="img/cercle.svg" alt="">3D configurations<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">
+                                <img src="img/cercle.svg" alt="">Product Development<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">
+                                <img src="img/cercle.svg" alt="">Laboratory Services<img src="img/fleche-droite.svg" alt=""></a>
+                            <a href="#" class="btn discover-btn">
+                                <img src="img/cercle.svg" alt=""> Tooling & Equipment<img src="img/fleche-droite.svg" alt=""></a>
                         </div>
                         <button id="learnBtn" class="btn" aria-label="Learn more about bespoke solutions">Learn More</button>
                     </div>
                 </div>
 
                 <div id="hideBespoke" class="hide-bespoke">
-                    <div class="hideBespoke-content">
-                    <a href="#" id="hideBespokeBtn" class="btn-bespoke" aria-label="Discover the Bespoke">
-                        <img src="img/fleche-vers-la-gauche.svg" alt="">Bespoke dispensing solution
-                    </a>
+                    <div id="hideBespokeContent" class="hideBespoke-content">
+                        <a href="#" id="hideBespokeBtn" class="btn-bespoke" aria-label="Discover the Bespoke dispensing solution">
+                            <img src="img/fleche-vers-la-gauche.svg" alt="Flèche pointant vers la gauche" class="bespoke-icon">
+                            <span>Bespoke Dispensing Solution</span>
+                        </a>
+                    </div>
                 </div>
-                </div>
+                
             </section>
             
         </div>

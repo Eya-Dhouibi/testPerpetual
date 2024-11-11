@@ -51,149 +51,6 @@ main {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-
-/*** ANNIMATION ****/
-@keyframes fadeRight {
-    0% {
-        opacity: 0;
-        width: 0;
-        transform: translateX(20px);
-    }
-    50% {
-        opacity: 0.5;
-        width: 50%;
-        transform: translateX(10px); 
-    }
-    100% {
-        opacity: 1;
-        width: fit-content;
-        transform: translateX(0);
-    }
-}
-
-.fadeRight {
-    transition: all 0.5s ease;
-    animation: fadeRight 0.5s ease forwards;
-}
-
-@keyframes fadeLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-10px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0); 
-    }
-}
-
-.fadeLeft {
-    transition: all 0.5s ease;
-    animation: fadeLeft 1s ease forwards;
-}
-
-@keyframes fadeLeftBesboke {
-    0% {
-        width: 60%;
-        transform: translateX(-90px); 
-    }
-    50% {
-        width: 40%;
-        transform: translateX(-60px); 
-    }
-    75% {
-        width: 30%;
-        transform: translateX(-30px); 
-    }
-    100% {
-        width: 25%;
-        transform: translateX(0); 
-    }
-}
-
-.fadeLeftBesboke {
-    transition: all 0.5s ease;
-    animation: fadeLeftBesboke 0.5s ease forwards;
-}
-
-@keyframes fadeDown {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px); 
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0); 
-    }
-  }
-  .fadeDown {
-    transition: all 0.5s ease;
-    animation: fadeDown 0.5s ease forwards;
-}
-  @keyframes fadeRightRotate {
-    0% {
-      opacity: 0;
-      transform: translateX(20px) rotate(-50deg); 
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateX(10px) rotate(-20deg); 
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0) rotate(0); 
-    }
-  }
-
-  .fadeRightRotate {
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.5s ease;
-    animation: fadeRightRotate 0.5s ease forwards;
-  }
-
-  @keyframes opacityTranslationDown {
-    0% {
-      opacity: 1; 
-      transform: translateY(10px); 
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateY(20px); 
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(30px); 
-    }
-  }
-  .opacityTranslationDown {
-    transition: all 0.5s ease;
-    animation: opacityTranslationDown 0.5s ease forwards;
-  } 
-
-  @keyframes opacityTranslationTop {
-    0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0); 
-    }
-    33% {
-        opacity: 0.66;
-        transform: translateY(-30px) translateX(-30px); 
-    }
-    66% {
-        opacity: 0.33;
-        transform: translateY(-60px) translateX(-60px); 
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-80px) translateX(-80px); 
-    }
-}
-
-.opacityTranslationTop {
-    animation: opacityTranslationTop 1s ease forwards;
-}
  
 /* Button Styles */
 .btn {
@@ -231,6 +88,7 @@ header {
     list-style: none;
     gap: 1.5rem;
     margin-right: 1rem;
+    z-index: 999;
 }
 
 .Main-Navigation ul li a {
@@ -257,12 +115,20 @@ header {
 #menu.active {
     display: block;
 }
+a.btn.register-btn {
+    z-index: 99;
+}
 /* Grid Layout */
 .mainContent {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
     align-items: center;
+}
+
+#blocLeft,
+#blocRight{
+    flex: 1;
+    box-sizing: border-box;
 }
 .bloc p {
     color: #002c5b;
@@ -284,6 +150,9 @@ header {
 #imgBlocRight{
     cursor: pointer;
 }
+#imgBlocRight {
+    margin-right: 3rem;
+}
 /* Discover Button */
 
 .discover-btn {
@@ -298,10 +167,11 @@ header {
     font-size: 14px;
     transition: border 0.4s ease, box-shadow 0.4s ease;
     margin: 0 8px 12px 0;
+    gap: 8px;
 }
 
 .discover-btn img {
-    margin-left: 0.375rem;
+    margin-left: 0;
     transition: margin-left 0.4s ease;
 }
 
@@ -314,12 +184,6 @@ header {
     margin-left: 0.625rem;
 }
 
-/* Bloc left */
-/* #blocLeft {
-    display: grid;
-    grid-template-columns: 80% 20%;
-    align-items: center;
-} */
 .productList{
     display: none;
     padding-bottom: 2rem;
@@ -328,16 +192,8 @@ header {
 /* Bloc right */
 #blocRight{
     position: relative;
-    opacity: 1;
 }
-/* #blocRight {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    align-items: center;
-} */
- #contenu-bloc-right{
-    padding-left: 45px;
- }
+
 .bespokeList{
     display: none;
 }
@@ -347,71 +203,74 @@ header {
 #hideBespoke {
     display: none;
     position: absolute;
-    height: 125%;
     top: -26%;
-    right: -50px;
-    width: 100%;
-    max-width: 260px;
+    bottom: 0;
+    right: -20px;
+    width: 30%;
+    background-color: #d8d8d8;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    background: url(img/bg-bespoke.jpg) no-repeat center center;
-    background-size: cover;
-    transition: display 0.3s ease;
-    overflow: hidden;
-    z-index: -1;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
 }
-
-#hideBespoke:before {
-    content: '';
-    position: absolute;
-    top: -25%;
-    right: 0;
-    height: 120%;
-    width: 100%;
-    background-color: #f2f2f2;
-    z-index: -1;
-}
-
-a.btn-bespoke {
-    display: flex;
-    color: #002c5b;
-    font-size: 1.015rem;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: center;
+.hideBespoke-content {
     text-align: center;
 }
+#hideBespokeBtn{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+#hideBespokeBtn span {
+    display: block;
+    color: #002c5b;
+    font-size: 15px;
+    font-weight: 600;
+}
 
-a.btn-bespoke img {
-    width: 2.5rem;
+#hideBespokeBtn img {
+    display: block;
+    width: 1.5rem;
     padding-bottom: 1.25rem;
+    margin: auto;
 }
 
 /* Hide Product Section */
 #hideProduct {
     display: none;
     position: absolute;
-    height: 100%;
-    width: 100%;
-    left: -20px;
-    max-width: 260px;
-    justify-content: center;
+    top: -26%;
+    bottom: 0;
+    left: -20px; 
+    width: 30%;
+    background-color: #d8d8d8;
     align-items: center;
-    background: url(img/bg-bespoke.png) no-repeat center center;
-    background-size: cover;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.hideProduct-content {
+    text-align: center;
+}
+#hideProductBtn{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+#hideProductBtn span {
+    display: block;
+    color: #002c5b;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-#hideProduct:before {
-    content: '';
-    position: absolute;
-    top: -25%;
-    left: 0;
-    height: 120%;
-    width: 100%;
-    background-color: #f2f2f2;
-    z-index: -1;
+#hideProductBtn img {
+    display: block;
+    width: 1.5rem;
+    padding-bottom: 1.25rem;
+    margin: auto;
 }
 
 /* Responsive Styles */
@@ -432,7 +291,6 @@ a.btn-bespoke img {
         width: 50%;
         height: 100%;
         padding: 20px;
-        z-index: 999;
     }
 
     .header nav ul li {
@@ -455,30 +313,77 @@ a.btn-bespoke img {
         line-height: 2rem;
     }
     #contenu-bloc-left {
-        max-height: 385px;
+        max-width: 295px;
         padding-bottom: 2rem;
     }
     .image-left {
         max-width: 200px;
-        margin: auto;
     }
     .image-right {
         width: fit-content;
         position: absolute;
         bottom: 100%;
-        left: 50%;
+        left:98px;
     }
     .d-bloc {
         display: block !important;
     }
     #contenu-bloc-right {
+        max-width: 295px;
         padding: 2rem 0 0 0;
     }
+    .mainContent.showAfter:after,
+    .mainContent.showBefore:before{
+      display: none;
+    }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 580px) and (max-width: 768px){
+    #hideBespoke {
+        width: 40%;
+        right: 0;
+        animation: none;
+    }
+    #hideProduct{
+        width: 40%;
+        right: 0;
+        left: auto;
+        animation: none;
+    }
+}
+ @media screen and (max-width: 580px) {
+    #hideBespoke {
+        width: 100%;
+        top: auto;
+        bottom: -120px;
+        animation: none;
+    }
+    #hideProduct{
+        width: 100%;
+        top: auto;
+        bottom: -120px;
+        animation: none;
+    }
+    
+    #contenu-bloc-left {
+        max-width: none;
+    }
+    .image-left {
+       margin: auto;
+    }
+    .image-right {
+        left: 50%;
+    }
+} 
+@media screen and (min-width: 1200px) {
     .Main-Navigation ul {
         margin-right: 5rem;
         gap: 1.5rem;
+    }
+    #hideBespoke {
+  right: -50px;
+    }
+    #hideProduct{
+  left: -50px;
     }
 }
 
